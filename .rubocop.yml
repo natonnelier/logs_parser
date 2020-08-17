@@ -1,0 +1,34 @@
+AllCops:
+  TargetRubyVersion: 2.6
+  DisabledByDefault: false
+  Includes:
+    - Rakefile
+    - lib/**/*.rb
+    - spec/**/*.rb
+  Excludes:
+    - bin/**
+
+Documentation:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Exclude:
+    - 'spec/**/*'
+
+Layout/LineLength:
+  Exclude:
+    - 'spec/**/*'
+
+Style/GuardClause:
+  Exclude:
+    - 'lib/parser/reader.rb'
+
+Style/IfUnlessModifier:
+  Exclude:
+    - 'lib/parser/reader.rb'
+
+Metrics/BlockLength:
+  Max: 50
+
+StringLiterals:
+  EnforcedStyle: double_quotes

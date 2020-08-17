@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require 'parser'
+require "parser"
+Dir["./lib/**/*.rb"].sort.each { |file| require file }
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

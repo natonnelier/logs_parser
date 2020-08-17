@@ -8,6 +8,7 @@ ruby '2.6.3'
 gem 'rake'
 
 group :development, :test do
+  gem 'byebug'
   gem 'rspec'
   gem 'rubocop'
 end
