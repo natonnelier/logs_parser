@@ -41,3 +41,16 @@ Prints:
 /about/2 22 unique views
 /about 21 unique views
 ```
+
+### To run tests:
+```shell
+rspec spec
+```
+or
+```shell
+bundle exec rspec spec
+```
+or
+```shell
+rake spec
+```
