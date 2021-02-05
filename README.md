@@ -17,14 +17,9 @@ Or add it to Gemfile:
 gem 'log_aggregator'
 ```
 
-This Parser app uses ruby 2.6.
-Steps to install:
-  * git clone https://github.com/natonnelier/ruby_app.git
-  * cd ruby_app && bundle install
-
 ## Usage
 
-Require library:
+First require library:
 
 ```
 require 'parser'
