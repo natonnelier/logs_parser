@@ -37,5 +37,19 @@ RSpec.describe Parser::Presenter do
         expect(format_class).to have_received(:call)
       end
     end
+
+    context "when options[:average] is set" do
+      let(:options) { { average: true } }
+      let(:format_class) { double(:average_format) }
+
+      before do
+        allow(Formats::Average).to receive(:new).with(data) { format_class }
+        subject.call
+      end
+
+      it "triggers UniqueVisit class call method" do
+        expect(format_class).to have_received(:call)
+      end
+    end
   end
 end

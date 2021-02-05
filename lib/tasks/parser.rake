@@ -12,4 +12,9 @@ namespace :parse do |args|
     options[:unique] = true
     Parser::Client.parse(file, options)
   end
+
+  task :average do
+    options[:average] = true
+    Parser::Client.parse(file, options)
+  end
 end

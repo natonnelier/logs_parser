@@ -5,6 +5,18 @@ Parses a log file and returns information regarding total visits and unique visi
 
 ## Installation
 
+Install gem directly:
+
+```
+gem install log_aggregator
+```
+
+Or add it to Gemfile:
+
+```
+gem 'log_aggregator'
+```
+
 This Parser app uses ruby 2.6.
 Steps to install:
   * git clone https://github.com/natonnelier/ruby_app.git
@@ -12,7 +24,32 @@ Steps to install:
 
 ## Usage
 
-### List pages with most views in descending order:
+Require library:
+
+```
+require 'parser'
+```
+
+Parse file and get number of visits:
+
+```
+Parser::Client.parse(log_file_path)
+```
+
+Add :uniq option to get number of uniq visits:
+
+```
+Parser::Client.parse(log_file_path, unique: true)
+```
+
+Add :average option to get average of visits:
+
+```
+Parser::Client.parse(log_file_path, average: true)
+```
+
+### Using rake tasks
+#### List pages with most views in descending order:
 ```shell
 rake parse:visits webserver.log #or my-file-path.log
 ```
@@ -27,7 +64,7 @@ Prints:
 /home 78 visits
 ```
 
-### List pages with most unique page views in descending order:
+#### List pages with most unique page views in descending order:
 ```shell
 rake parse:unique webserver.log #or my-file-path.log
 ```

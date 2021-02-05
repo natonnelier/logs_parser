@@ -16,7 +16,9 @@ module Parser
     private
 
     def format_class
-      options[:unique] ? Formats::UniqueVisit : Formats::Visit
+      return Formats::Average if options[:average]
+      return Formats::UniqueVisit if options[:unique]
+      Formats::Visit
     end
 
     def output_formatted_data

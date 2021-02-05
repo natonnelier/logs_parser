@@ -32,6 +32,20 @@ RSpec.describe "Parser" do
         }.to output(result).to_stdout
       end
     end
+
+    context "with average: true" do
+      let(:options) { { average: true } }
+      let(:file) { "spec/fixtures/files/valid_average_log.log" }
+      let(:result) {
+        "/some_page/1 average #{5/3}\n"
+      }
+
+      it "outputs average visits for each path" do
+        expect {
+          subject.parse(file, options)
+        }.to output(result).to_stdout
+      end
+    end
   end
 
   describe "parse when file is missing" do
